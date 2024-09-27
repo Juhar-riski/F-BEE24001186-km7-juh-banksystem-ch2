@@ -1,3 +1,5 @@
+
+const express = require('express');
 const readline = require('readline');
 
 class SaldoManager {
@@ -26,18 +28,18 @@ class SaldoManager {
         });
     }
 
-    async tambahSaldo() {
+    async deposit() {
         const input = await this.askQuestion("Masukkan jumlah saldo yang ingin ditambahkan: ");
         const tambah = parseInt(input, 10);
         if (!isNaN(tambah) && tambah > 0) {
             this.saldo += tambah;
             this.updateSaldoDisplay();
         } else {
-            console.log("Masukkan jumlah yang valid.");
+            setTimeout(() => {console.log("Masukkan jumlah yang valid.")},300);
         }
     }
 
-    async kurangiSaldo() {
+    async withdraw() {
         if (this.saldo === 0) {
             console.log("Saldo Anda sudah 0.");
             return;
@@ -91,3 +93,5 @@ class SaldoManager {
         }
     }
 }
+
+module.exports = SaldoManager;
