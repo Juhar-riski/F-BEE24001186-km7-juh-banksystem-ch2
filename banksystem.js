@@ -1,6 +1,6 @@
 // Running program
 // import SaldoManager from "./bank_account.js"
-const saldoManager = require ('./bank_account');
+const saldoManager = require ('./bank_account.js');
 
 
 const saldoManager1 = new SaldoManager();
