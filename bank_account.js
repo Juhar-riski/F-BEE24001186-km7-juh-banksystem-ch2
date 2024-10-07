@@ -1,4 +1,4 @@
-const readline = require('readline');
+import readline from 'readline';
 
 class SaldoManager {
     constructor() {
@@ -51,15 +51,21 @@ class SaldoManager {
             console.log("Masukkan jumlah yang valid.");
         }
     }
+
+    
  
     async pilihan() {
         console.log("\nSilahkan Pilih tindakan:");
         console.log("1. Tambahkan Saldo");
         console.log("2. Kurangi Saldo");
-        console.log("3. Keluar");
+        console.log("3. Cek Saldo");
+        console.log("4. Keluar");
 
-        const pilihan = await this.askQuestion("Masukkan pilihan Anda (1/2/3): ");
+        const pilihan = await this.askQuestion("Masukkan pilihan Anda (1/2/3/4): ");
         return pilihan;
+    }
+    getBalance() {
+        return this.saldo;
     }
 
     close() {
@@ -82,6 +88,9 @@ class SaldoManager {
                     await this.withdrawdo(deductAmount);
                     break;
                 case '3':
+                    console.log(`Saldo Anda Saat Ini : ${this.formatRupiah(this.getBalance())}`);
+                    break;
+                case '4':
                     running = false;
                     console.log("Program selesai ya bruh.");
                     this.close();
@@ -93,4 +102,4 @@ class SaldoManager {
     }
 }
 
-module.exports = SaldoManager;
+export default SaldoManager;
