@@ -1,3 +1,5 @@
+-- 7th Action
+
 -- Pada tabel nasabah sudah saya gandakan data dengan cara running
 -- ulang procedure hingga mendapatkan total data 1000 baris
 

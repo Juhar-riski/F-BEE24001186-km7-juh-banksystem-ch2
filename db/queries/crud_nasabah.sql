@@ -1,19 +1,9 @@
+-- 4th Action
+
 -- Menampilkan Tabel
 SELECT * FROM nasabah;
 
--- Input data nasabah menggunakan procedure
-CREATE OR REPLACE PROCEDURE insert_nasabah(
-	n_name VARCHAR,
-	n_address VARCHAR
-)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-	INSERT INTO nasabah(nasabah_name,nasabah_address)
-	VALUES (n_name,n_address);
-END;
-$$;
-
+-- Input data nasabah menggunakan call procedure insert_nasabah yang telah dibuat
 CALL insert_nasabah('loki','asgard');
 CALL insert_nasabah('thor','asgard');
 CALL insert_nasabah('iron','ntb');
