@@ -1,3 +1,4 @@
+-- 2nd Action
 -- Create and Drop table Nasabah,Account,Transaksi
 
 -- Create Table Nasabah,Account,Transaksi

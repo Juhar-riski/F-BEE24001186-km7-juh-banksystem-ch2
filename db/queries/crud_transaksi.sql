@@ -1,3 +1,5 @@
+-- 6th Action
+
 -- Menampilkan tabel
 SELECT * FROM transaksi;
 
@@ -16,22 +18,8 @@ VALUES
 	('8','200000','300000'),
 	('6','400000','500000');
 
--- Update data menggunakan procedure
-CREATE OR REPLACE PROCEDURE update_transaksi(
-    t_id_transaksi INT,
-    t_id_account INT,
-    t_withdraw INT,
-	t_deposit INT
-)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-    UPDATE transaksi
-    SET id_account = t_id_account, withdraw = t_withdraw, deposit = t_deposit
-    WHERE id_transaksi = t_id_transaksi;
-END;
-$$;
-
+-- Update data deposit & withdraw menggunakan call procedure 
+-- update_transaksi yang telah dibuat
 CALL update_transaksi(1,null,null);
 
 -- Menghapus data pada id yang diinginkan
